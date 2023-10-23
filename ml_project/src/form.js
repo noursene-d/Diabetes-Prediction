@@ -9,6 +9,7 @@ const FormComponent = () => {
 
   
   const showModal = () => {
+    if (Object.keys(formData).length === 8) {
     setIsModalOpen(true);
     console.log(formData);
     const requestOptions = {
@@ -20,6 +21,7 @@ const FormComponent = () => {
     .then(response => response.json())
     .then(result => {setPrediction(result); console.log(result);})
     .catch(error => console.log('error', error))
+    }
   };
 
   const handleOk = () => {
